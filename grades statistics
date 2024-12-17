@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class Main45 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        
+        System.out.print("Enter the number of grades: ");
+        int numberOfGrades = scanner.nextInt();
+
+        
+        int gradeA = 0, gradeB = 0, gradeC = 0, gradeD = 0, gradeF = 0;
+
+        
+        System.out.println("Enter the grades one by one:");
+        for (int i = 0; i < numberOfGrades; i++) {
+            int grade = scanner.nextInt();
+            if (grade >= 90 && grade <= 100) {
+                gradeA++;
+            } else if (grade >= 75 && grade <= 89) {
+                gradeB++;
+            } else if (grade >= 60 && grade <= 74) {
+                gradeC++;
+            } else if (grade >= 50 && grade <= 59) {
+                gradeD++;
+            } else if (grade >= 0 && grade <= 49) {
+                gradeF++;
+            }
+        }
+
+        
+        double percentA = (double) gradeA / numberOfGrades * 100;
+        double percentB = (double) gradeB / numberOfGrades * 100;
+        double percentC = (double) gradeC / numberOfGrades * 100;
+        double percentD = (double) gradeD / numberOfGrades * 100;
+        double percentF = (double) gradeF / numberOfGrades * 100;
+
+        
+        System.out.println("A: " + gradeA + " grades (" + String.format("%.0f", percentA) + "%)");
+        System.out.println("B: " + gradeB + " grades (" + String.format("%.0f", percentB) + "%)");
+        System.out.println("C: " + gradeC + " grades (" + String.format("%.0f", percentC) + "%)");
+        System.out.println("D: " + gradeD + " grades (" + String.format("%.0f", percentD) + "%)");
+        System.out.println("F: " + gradeF + " grades (" + String.format("%.0f", percentF) + "%)");
+        
+        
+        scanner.close();
+    }
+}
